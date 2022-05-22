@@ -1,0 +1,37 @@
+format = "$character"
+right_format = "$cmd_duration$git_branch$conda"
+add_newline = false
+
+[character]
+success_symbol = "[❯](green)"
+error_symbol = "[❯](red)"
+vimcmd_symbol = "[❮](green)"
+# success_symbol = "[❯](22)[❯](28)[❯](34)"
+# error_symbol = "[❯](88)[❯](124)[❯](160)"
+
+[cmd_duration]
+min_time = 1000
+style = "dimmed yellow"
+format = " [$duration]($style)"
+# show_notifications = true
+# min_time_to_notify = 60000
+
+[conda]
+symbol = ""
+style = "dimmed green"
+format = " [$symbol $environment]($style)"
+
+[git_branch]
+symbol = ""
+style = "dimmed purple"
+format = " [$symbol $branch]($style)"
+
+# Get editor completions based on the config schema
+#"$schema" = 'https://starship.rs/config-schema.json'
+
+# Inserts a blank line between shell prompts
+#add_newline = true
+
+# Disable the package module, hiding it from the prompt completely
+#[package]
+#disabled = true

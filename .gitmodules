@@ -1,0 +1,12 @@
+[submodule "alacritty/alacritty-theme"]
+	path = alacritty/alacritty-theme
+	url = git@github.com:alacritty/alacritty-theme.git
+[submodule "tmux/plugins/tpm"]
+	path = tmux/plugins/tpm
+	url = git@github.com:tmux-plugins/tpm.git
+[submodule "zsh/zsh-auto-notify"]
+	path = zsh/zsh-auto-notify
+	url = git@github.com:MichaelAquilina/zsh-auto-notify.git
+[submodule "zsh/zsh-you-should-use"]
+	path = zsh/zsh-you-should-use
+	url = git@github.com:MichaelAquilina/zsh-you-should-use.git
