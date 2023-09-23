@@ -3,7 +3,8 @@
 [ -f ${XDG_CONFIG_HOME}/fzf/fzf.zsh ] && source ${XDG_CONFIG_HOME}/fzf/fzf.zsh
 
 # use fd instead of find
-export FZF_DEFAULT_COMMAND="fd --type f --strip-cwd-prefix --hidden --follow"
+# export FZF_DEFAULT_COMMAND="fd --type f --strip-cwd-prefix --hidden --follow"
+export FZF_DEFAULT_COMMAND="fd --hidden --follow . $HOME"
 export FZF_CTRL_T_COMMAND="${FZF_DEFAULT_COMMAND}"
 
 # set nord color theme and other preferences
@@ -19,3 +20,6 @@ export FZF_CTRL_T_OPTS="
   --preview 'bat -p --color=always {}'
   --bind 'ctrl-/:change-preview-window(down|hidden|)'
 "
+
+# set ALT + C (ESC + C or CTRL-[ + C) preferences
+export FZF_ALT_C_COMMAND="fd --type d --hidden --follow . $HOME"
