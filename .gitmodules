@@ -10,3 +10,6 @@
 [submodule "zsh/zsh-you-should-use"]
 	path = zsh/zsh-you-should-use
 	url = git@github.com:MichaelAquilina/zsh-you-should-use.git
+[submodule "fonts/SF-Mono-Nerd-Font"]
+	path = fonts/SF-Mono-Nerd-Font
+	url = git@github.com:epk/SF-Mono-Nerd-Font.git
