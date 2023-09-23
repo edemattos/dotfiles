@@ -111,3 +111,7 @@ alias gd="git diff"
 alias gl="git log --graph --pretty=format:'%C(yellow)%h%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset%Cred%d%Creset' --abbrev-commit"
 alias gst="git status"
 
+# tmux
+alias tas="tmux attach -t"
+alias tns="tmux new-session -s"
+alias tks="tmux kill-session -t"
