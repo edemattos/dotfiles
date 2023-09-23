@@ -112,6 +112,7 @@ alias gl="git log --graph --pretty=format:'%C(yellow)%h%Creset %s %Cgreen(%cr) %
 alias gst="git status"
 
 # tmux
-alias tas="tmux attach -t"
 alias tns="tmux new-session -s"
+alias tas="tmux attach -t"
 alias tks="tmux kill-session -t"
+alias tls="tmux ls"
