@@ -3,7 +3,6 @@ alias cbc="pbcopy"  # [c]lip[b]oard[c]opy (e.g. echo "hi" | cbc)
 alias cbp="pbpaste" # [c]lip[b]oard[p]aste
 alias e="echo"
 alias n="nano"
-alias rm="trash -F"
 alias trim="awk '{\$1=\$1;print}'"
 alias which="which -p"
 # create and navigate into a new directory
@@ -21,11 +20,14 @@ alias la="lsd -A"
 alias al="la"
 alias lah="lsd -lAh"
 alias lt="lsd --tree"
+cx () {
+    cd "$@" && ls
+}
 
-# conda/mamba
+# mamba (conda)
 alias envc="mamba create"  # TODO: mamba env create?
 alias envd="mamba deactivate"
-conda_fzf () {  # fuzzy find conda enviroment name
+envfzf () {  # fuzzy find mamba environments
     selection=(
         $(
             mamba env list |
@@ -45,12 +47,12 @@ conda_fzf () {  # fuzzy find conda enviroment name
     )
     echo "${selection}"
 }
-enva () {
-    if [[ ! -z "$1" ]]; then selection="$1"; else selection=$(conda_fzf); fi
+enva () {  # fuzzy find mamba environments and activate
+    if [[ ! -z "$1" ]]; then selection="$1"; else selection=$(envfzf); fi
     [[ -n "${selection}" ]] && mamba activate "${selection}"
 }
-envr () {
-    if [[ ! -z "$1" ]]; then selection="$1"; else selection=$(conda_fzf); fi
+envr () {  # fuzzy find mamba environments and remove
+    if [[ ! -z "$1" ]]; then selection="$1"; else selection=$(envfzf); fi
     [[ -n "${selection}" ]] && mamba env remove --name "${selection}"
 }
 
@@ -62,17 +64,17 @@ dprune() {
     docker builder prune -f
 }
 
-# fzf
-cdf() {  # fuzzy find directory name and cd directly into it
-    # search home dir by default, otherwise use specified dir
-    if [[ ! -z "$1" && -d "$1" ]]; then
-        search_dir="${1}"
-    else
-        search_dir=~
-    fi
-    destination=$(fd --type directory . ${search_dir} | fzf)
-    if [[ ! -z ${destination} ]]; then cd ${destination}; fi
-}
+# # fzf (USE ALT + C INSTEAD)
+# cdf() {  # fuzzy find directory name and cd directly into it
+#     # search home dir by default, otherwise use specified dir
+#     if [[ ! -z "$1" && -d "$1" ]]; then
+#         search_dir="${1}"
+#     else
+#         search_dir=~
+#     fi
+#     destination=$(fd --type directory . ${search_dir} | fzf)
+#     if [[ ! -z ${destination} ]]; then cd ${destination}; fi
+# }
 
 # git
 cdg() {  # cd to the root directory of a git repository
