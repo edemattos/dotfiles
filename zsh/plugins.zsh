@@ -10,11 +10,11 @@ compinit
 _comp_options+=(globdots)
 
 # zsh plugins
-source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ${HOMEBREW_PREFIX:-/usr/local}/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ${ZDOTDIR}/dirhistory/dirhistory.plugin.zsh
 
 # zsh-history-substring-search
-source /opt/homebrew/share/zsh-history-substring-search/zsh-history-substring-search.zsh
+source ${HOMEBREW_PREFIX:-/usr/local}/share/zsh-history-substring-search/zsh-history-substring-search.zsh
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 
@@ -29,7 +29,7 @@ bindkey '^[[B' history-substring-search-down
 # export YSU_MESSAGE_FORMAT="$(tput setaf 1)Hint: use %alias_type '%alias'$(tput sgr0)"
 
 # zsh-syntax-highlighter (this plugin must be at the end of .zshrc)
-source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ${HOMEBREW_PREFIX:-/usr/local}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ZSH_HIGHLIST_HIGHLIGHTERS=(main brackets)
 typeset -A ZSH_HIGHLIGHT_STYLES
 ZSH_HIGHLIGHT_STYLES[path]='none'
