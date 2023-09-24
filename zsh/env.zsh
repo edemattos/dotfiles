@@ -1,11 +1,13 @@
 # NOTE: ZDOTDIR is set in /etc/zshenv
 
 # global text editor
-export EDITOR=/opt/homebrew/bin/nano
+export EDITOR=${HOMEBREW_PREFIX}/bin/nano
 # lsd
 export LS_COLORS="$(vivid generate custom)"
 # docker compose
 export DOCKER_SCAN_SUGGEST=false
+# brew
+export HOMEBREW_PREFIX=${HOMEBREW_PREFIX:-/usr/local}
 
 # set XDG paths
 export XDG_DATA_HOME=${HOME}/.local/share
