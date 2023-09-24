@@ -13,3 +13,15 @@
 [submodule "fonts/SF-Mono-Nerd-Font"]
 	path = fonts/SF-Mono-Nerd-Font
 	url = git@github.com:epk/SF-Mono-Nerd-Font.git
+[submodule "tmux/plugins/nord-tmux"]
+	path = tmux/plugins/nord-tmux
+	url = git@github.com:nordtheme/tmux.git
+[submodule "tmux/plugins/tmux-better-mouse-mode"]
+	path = tmux/plugins/tmux-better-mouse-mode
+	url = git@github.com:NHDaly/tmux-better-mouse-mode.git
+[submodule "tmux/plugins/tmux-prefix-highlight"]
+	path = tmux/plugins/tmux-prefix-highlight
+	url = git@github.com:tmux-plugins/tmux-prefix-highlight.git
+[submodule "tmux/plugins/tmux-sensible"]
+	path = tmux/plugins/tmux-sensible
+	url = git@github.com:tmux-plugins/tmux-sensible.git
