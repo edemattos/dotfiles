@@ -1,20 +1,22 @@
 # NOTE: ZDOTDIR is set in /etc/zshenv
 
+# brew
+export HOMEBREW_PREFIX=${HOMEBREW_PREFIX:-/usr/local}
+export HOMEBREW_NO_AUTO_UPDATE=1
 # global text editor
 export EDITOR=${HOMEBREW_PREFIX}/bin/nano
 # lsd
 export LS_COLORS="$(vivid generate custom)"
 # docker compose
 export DOCKER_SCAN_SUGGEST=false
-# brew
-export HOMEBREW_PREFIX=${HOMEBREW_PREFIX:-/usr/local}
 
-# set XDG paths
+# XDG paths
 export XDG_DATA_HOME=${HOME}/.local/share
 export XDG_CACHE_HOME=${HOME}/.cache
 export XDG_CONFIG_HOME=${HOME}/.config
 export XDG_STATE_HOME=${HOME}/.local/state
 export XDG_RUNTIME_DIR=/run/user/$UID
+
 # zsh
 export HISTFILE=${ZDOTDIR}/.zsh_history
 # aws
