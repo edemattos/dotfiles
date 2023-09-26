@@ -1,30 +1,71 @@
-format = "$character"
-# right_format = "$cmd_duration$git_branch$conda"
+format = """
+$directory\
+$git_branch\
+$git_commit\
+$git_status\
+$conda\
+$cmd_duration\
+$line_break\
+$character
+"""
 add_newline = false
 
 [character]
-success_symbol = "[❯](green)"
-error_symbol = "[❯](red)"
-vimcmd_symbol = "[❮](green)"
+success_symbol = "[❯](dimmed green)"
+error_symbol = "[❯](dimmed red)"
+vimcmd_symbol = "[❮](dimmed green)"
 # success_symbol = "[❯](22)[❯](28)[❯](34)"
 # error_symbol = "[❯](88)[❯](124)[❯](160)"
 
 [cmd_duration]
 min_time = 1000
-style = "dimmed yellow"
-format = " [$duration]($style)"
+style = "dimmed purple"
+format = "[$duration]($style)"
 # show_notifications = true
 # min_time_to_notify = 60000
 
 [conda]
 symbol = ""
 style = "dimmed green"
-format = " [$symbol $environment]($style)"
+format = "[$symbol $environment]($style) "
+
+[directory]
+style = "dimmed white"
+truncation_length = 9
+truncation_symbol = ''
+truncate_to_repo = true
+format = '[$read_only]($read_only_style)[$path]($style) '
+home_symbol = "∼"
 
 [git_branch]
-symbol = ""
-style = "dimmed purple"
-format = " [$symbol $branch]($style)"
+symbol = ""
+style = "dimmed red"
+format = "[$symbol $branch]($style) "
+
+[git_commit]
+commit_hash_length = 7
+format = '[ $hash$tag]($style) '
+style = 'dimmed red'
+tag_disabled = false
+tag_symbol = "  "
+
+[git_status]
+conflicted = '='
+ahead = ''
+behind = ''
+diverged = ' '
+up_to_date = ''
+untracked = '[](dimmed white) '
+stashed = '[](dimmed white) '
+modified = '[](dimmed yellow) '
+staged = '[](dimmed green) '
+renamed = '[](dimmed green) '
+deleted = '[] '
+format = '[$all_status$ahead_behind]($style) '
+style = "dimmed red"
+
+[line_break]
+disabled = false
 
 # Get editor completions based on the config schema
 #"$schema" = 'https://starship.rs/config-schema.json'
