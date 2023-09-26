@@ -3,6 +3,7 @@ alias cbc="pbcopy"  # [c]lip[b]oard[c]opy (e.g. echo "hi" | cbc)
 alias cbp="pbpaste" # [c]lip[b]oard[p]aste
 alias e="echo"
 alias n="nano"
+alias ssh="TERM=xterm-256color ssh"
 alias trim="awk '{\$1=\$1;print}'"
 alias which="which -p"
 # create and navigate into a new directory
@@ -18,6 +19,7 @@ alias sl="lsd"
 alias l="lsd"
 alias la="lsd -A"
 alias al="la"
+alias ll="lsd -lh"
 alias lah="lsd -lAh"
 alias lt="lsd --tree"
 cx () {
@@ -112,7 +114,20 @@ alias gl="git log --graph --pretty=format:'%C(yellow)%h%Creset %s %Cgreen(%cr) %
 alias gst="git status"
 
 # tmux
-alias tns="tmux new-session -s"
+launch_tmux() {
+    # start tmux session automatically when using Alacritty (i.e. not VSCode)
+    # explicitly disabled for native Terminal app and existing tmux sessions
+    # https://unix.stackexchange.com/questions/43601#comment991939_113768
+    [[ ! -z $1 ]] && session_name=$1 || session_name="main"
+    if command -v tmux &> /dev/null && \
+        [[ ${TERM} == "alacritty" && ! ${TERM} =~ @(screen|tmux) || ! -z ${ALACRITTY_WINDOW_ID} ]] && \
+        [[ ${TERM_PROGRAM} != @("vscode"|"Apple_Terminal"|"tmux") ]] && \
+        [[ -z ${TMUX} ]] && [[ -n "${PS1}" ]]; then
+        tmux new -A -s ${session_name}
+    fi
+}
+alias t="launch tmux"
+alias tns="tmux new -s"
 alias tas="tmux attach -t"
 alias tks="tmux kill-session -t"
 alias tls="tmux ls"
