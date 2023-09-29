@@ -27,7 +27,8 @@ cx () {
 }
 
 # mamba (conda)
-alias envc="mamba create"  # TODO: mamba env create?
+alias envc="mamba env create"
+alias envu="mamba env update"
 alias envd="mamba deactivate"
 envfzf () {  # fuzzy find mamba environments
     selection=(
