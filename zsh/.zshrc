@@ -1,3 +1,5 @@
+export DOTFILES=${HOME}/dotfiles
+
 # prompt
 eval "$(starship init zsh)"
 
