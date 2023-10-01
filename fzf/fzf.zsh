@@ -11,3 +11,4 @@ fi
 # Key bindings
 # ------------
 source "${HOMEBREW_PREFIX}/opt/fzf/shell/key-bindings.zsh"
+source "${DOTFILES}/fzf/fzf-git.sh/fzf-git.sh"

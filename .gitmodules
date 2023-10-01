@@ -28,3 +28,6 @@
 [submodule "tmux/plugins/tmux-fuzzback"]
 	path = tmux/plugins/tmux-fuzzback
 	url = git@github.com:roosta/tmux-fuzzback.git
+[submodule "fzf/fzf-git.sh"]
+	path = fzf/fzf-git.sh
+	url = git@github.com:junegunn/fzf-git.sh.git
