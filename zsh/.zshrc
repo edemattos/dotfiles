@@ -7,5 +7,10 @@ source ${ZDOTDIR}/fzf.zsh
 source ${ZDOTDIR}/alias.zsh
 source ${ZDOTDIR}/plugins.zsh
 
+# load additional non-versioned local variables
+if [[ -f ${XDG_LOCAL_HOME}/.zshrc ]]; then
+    source ${XDG_LOCAL_HOME}/.zshrc
+fi
+
 # create subshell for tmux
 launch_tmux
