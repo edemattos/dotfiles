@@ -50,8 +50,8 @@ tag_symbol = "  "
 
 [git_status]
 conflicted = '='
-ahead = ''
-behind = ''
+ahead = ' '
+behind = ' '
 diverged = ' '
 up_to_date = ''
 untracked = '[](dimmed white) '
@@ -59,7 +59,7 @@ stashed = '[](dimmed white) '
 modified = '[](dimmed yellow) '
 staged = '[](dimmed green) '
 renamed = '[](dimmed green) '
-deleted = '[] '
+deleted = '[](dimmed red) '
 format = '[$all_status$ahead_behind]($style)'
 style = "dimmed red"
 
