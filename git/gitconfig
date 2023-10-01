@@ -1,0 +1,41 @@
+[core]
+	editor = nano
+    pager = delta
+[push]
+	default = simple
+[init]
+	defaultBranch = main
+[interactive]
+    diffFilter = delta --color-only --features=interactive
+[merge]
+    conflictstyle = diff3
+[diff]
+    colorMoved = default
+[delta]
+    navigate = true
+    light = false
+    side-by-side = true
+	features = unobtrusive-line-numbers decorations
+[delta "unobtrusive-line-numbers"]
+	zero-style = dim syntax
+    line-numbers-minus-style = "#444444"
+    line-numbers-zero-style = "#444444"
+    line-numbers-plus-style = "#444444"
+    line-numbers-left-format = "{nm:>4}│"
+    line-numbers-right-format = "{np:>4}│"
+    line-numbers-left-style = omit
+    line-numbers-right-style = omit
+[delta "decorations"]
+    commit-decoration-style = dim ol
+    commit-style = raw
+    file-style = omit
+    hunk-header-decoration-style = dim box
+    hunk-header-file-style = dim syntax
+    hunk-header-style = file syntax
+[hub]
+	protocol = https
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
