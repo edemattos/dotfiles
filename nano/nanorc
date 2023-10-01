@@ -236,7 +236,7 @@ set trimblanks
 
 
 ## === Syntax coloring ===
-include "/usr/local/share/nano/*.nanorc"
+include "~/.local/nano/*.nanorc"
 
 ## For all details, see 'man nanorc', section SYNTAX HIGHLIGHTING.
 
