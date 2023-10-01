@@ -1,6 +1,6 @@
 # see ~/${XDG_CONFIG_HOME}/fd/ignore for excluded patterns
 
-[ -f ${XDG_CONFIG_HOME}/fzf/fzf.zsh ] && source ${XDG_CONFIG_HOME}/fzf/fzf.zsh
+[[ -f ${XDG_CONFIG_HOME}/fzf/fzf.zsh ]] && source ${XDG_CONFIG_HOME}/fzf/fzf.zsh
 
 # use fd instead of find
 # export FZF_DEFAULT_COMMAND="fd --type f --strip-cwd-prefix --hidden --follow"
