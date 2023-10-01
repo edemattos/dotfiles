@@ -127,7 +127,7 @@ launch_tmux() {
         tmux new -A -s ${session_name}
     fi
 }
-alias t="launch tmux"
+alias t="launch_tmux"
 alias tns="tmux new -s"
 alias tas="tmux attach -t"
 alias tks="tmux kill-session -t"
