@@ -15,4 +15,4 @@ if [[ -f ${XDG_LOCAL_HOME}/.zshrc ]]; then
 fi
 
 # create subshell for tmux
-launch_tmux
+# launch_tmux
