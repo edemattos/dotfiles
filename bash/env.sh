@@ -6,6 +6,9 @@ export XDG_CACHE_HOME=${HOME}/.cache
 export XDG_CONFIG_HOME=${HOME}/.config
 export XDG_RUNTIME_DIR=/run/user/$UID
 
+# add local binaries to PATH
+export PATH=${PATH}:${XDG_LOCAL_HOME}/bin
+
 # aws
 export AWS_SHARED_CREDENTIALS_FILE=${XDG_CONFIG_HOME}/aws/credentials
 export AWS_CONFIG_FILE=${XDG_CONFIG_HOME}/aws/config
