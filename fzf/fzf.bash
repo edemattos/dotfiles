@@ -8,7 +8,8 @@ fi
 # ---------------
 [[ $- == *i* ]] && source "${HOMEBREW_PREFIX}/opt/fzf/shell/completion.bash" 2> /dev/null
 
-# Key bindings
+# Default preferences and key bindings
 # ------------
+source "${DOTFILES}/fzf/fzf.sh"
 source "${HOMEBREW_PREFIX}/opt/fzf/shell/key-bindings.bash"
 source "${DOTFILES}/fzf/fzf-git.sh/fzf-git.sh"
