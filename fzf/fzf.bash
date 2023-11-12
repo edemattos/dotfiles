@@ -11,5 +11,5 @@ fi
 # Default preferences and key bindings
 # ------------
 source "${DOTFILES}/fzf/fzf.sh"
-source "${XDG_LOCAL_HOME}/opt/fzf/shell/key-bindings.bash"
+source "${XDG_LOCAL_HOME}/fzf/shell/key-bindings.bash"
 source "${DOTFILES}/fzf/fzf-git.sh/fzf-git.sh"
