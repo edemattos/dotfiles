@@ -1,4 +1,6 @@
 format = """
+$username\
+$hostname\
 [ ](dimmed white)\
 $directory\
 $conda\
@@ -63,6 +65,18 @@ renamed = '[](dimmed green) '
 deleted = '[](dimmed red) '
 format = '[$all_status$ahead_behind]($style)'
 style = "dimmed red"
+
+[username]
+format = '[$user]($style) '
+show_always = false
+style_root = "dimmed yellow"
+style_user = "dimmed cyan"
+
+[hostname]
+format = '[$sshsymbol$hostname]($style) '
+ssh_only = true
+ssh_symbol = " "
+style = "dimmed cyan"
 
 [line_break]
 disabled = false
