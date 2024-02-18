@@ -1,3 +1,8 @@
+alias ..="cd ../"
+alias ...="cd ../../"
+alias ....="cd ../../../"
+alias .....="cd ../../../../"
+
 alias c="clear"
 alias cbc="pbcopy"  # [c]lip[b]oard[c]opy (e.g. echo "hi" | cbc)
 alias cbp="pbpaste" # [c]lip[b]oard[p]aste
