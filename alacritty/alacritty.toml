@@ -34,8 +34,3 @@ title = "Terminal"
 [window.padding]
 x = 15
 y = 0
-
-[keyboard]
-bindings = [
-    { key = "N", mods = "Control|Shift", action = "SpawnNewInstance" },
-]
