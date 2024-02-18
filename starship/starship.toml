@@ -73,7 +73,7 @@ style_root = "dimmed yellow"
 style_user = "dimmed cyan"
 
 [hostname]
-format = '[$sshsymbol$hostname]($style) '
+format = '[$ssh_symbol$hostname]($style) '
 ssh_only = true
 ssh_symbol = " "
 style = "dimmed cyan"
