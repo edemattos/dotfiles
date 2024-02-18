@@ -70,13 +70,13 @@ style = "dimmed red"
 format = '[$user]($style) '
 show_always = false
 style_root = "dimmed yellow"
-style_user = "dimmed cyan"
+style_user = "dimmed purple"
 
 [hostname]
 format = '[$ssh_symbol$hostname]($style) '
 ssh_only = true
 ssh_symbol = " "
-style = "dimmed cyan"
+style = "dimmed purple"
 
 [line_break]
 disabled = false
