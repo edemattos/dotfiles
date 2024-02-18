@@ -5,6 +5,15 @@ set -eou pipefail
 DOTFILES=$(cd -- "$(dirname -- ${BASH_SOURCE[0]})" &> /dev/null && pwd)
 WORKDIR=$(pwd) && cd ${DOTFILES}
 
+# load shell configuration
+if [[ "${SHELL}" == "/bin/zsh" ]]; then
+    shell="zsh"
+elif [[ "${SHELL}" == "/bin/bash" ]]; then
+    shell="bash"
+fi
+versioned_rc="${DOTFILES}/${shell}/.${shell}rc"
+source ${versioned_rc}
+
 if [[ "${OSTYPE}" == *"darwin"* ]]; then  # macOS
 
     # configure ZDOTDIR in /etc/zshenv
@@ -50,12 +59,6 @@ if [[ ! -L ${symlink} ]]; then ln -s ${symlink} ${DOTFILES}/starship/starship.to
 # conda
 echo "Cleaning up conda installation"
 conda init "$(basename "${SHELL}")" > /dev/null
-if [[ "${SHELL}" == "/bin/zsh" ]]; then
-    shell="zsh"
-elif [[ "${SHELL}" == "/bin/bash" ]]; then
-    shell="bash"
-fi
-versioned_rc="${DOTFILES}/${shell}/.${shell}rc"
 local_rc="${XDG_LOCAL_HOME}/.${shell}rc"
 # remove existing conda initialization from local rc file
 sed -i '/# >>> conda initialize >>>/,/# <<< conda initialize <<</d' ${local_rc}
