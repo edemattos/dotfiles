@@ -1,5 +1,5 @@
 [core]
-	editor = nano
+    editor = nano
     pager = delta
 [push]
 	default = simple
