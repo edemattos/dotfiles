@@ -1,0 +1,41 @@
+import = ["~/.config/alacritty/alacritty-theme/themes/nord.toml"]
+live_config_reload = true
+working_directory = "."
+
+[cursor.style]
+blinking = "Always"
+shape = "Beam"
+
+[font]
+size = 18.0
+
+[font.normal]
+family = "SFMono Nerd Font"
+style = "Regular"
+
+[font.offset]
+x = 0
+y = 0
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+[selection]
+save_to_clipboard = false
+
+[window]
+decorations = "buttonless"
+dynamic_padding = false
+dynamic_title = false
+opacity = 1.0
+title = "Terminal"
+
+[window.padding]
+x = 15
+y = 0
+
+[keyboard]
+bindings = [
+    { key = "N", mods = "Control|Shift", action = "SpawnNewInstance" },
+]

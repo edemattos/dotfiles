@@ -13,5 +13,5 @@ fi
 # prompt
 eval "$(starship init bash)"
 
-# create subshell for tmux
-# launch_tmux
+# alacritty always spawns new instance in previous directory
+cd ${HOME} && clear

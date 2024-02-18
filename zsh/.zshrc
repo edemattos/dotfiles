@@ -14,5 +14,5 @@ if [[ -f ${XDG_LOCAL_HOME}/.zshrc ]]; then
     source ${XDG_LOCAL_HOME}/.zshrc
 fi
 
-# create subshell for tmux
-# launch_tmux
+# alacritty always spawns new instance in previous directory
+cd ${HOME} && clear
