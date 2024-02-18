@@ -56,7 +56,7 @@ fi
 
 # conda
 echo "Cleaning up conda installation"
-conda init "$(basename "${SHELL}")" > /dev/null
+mamba init "$(basename "${SHELL}")" > /dev/null
 local_rc="${XDG_LOCAL_HOME}/.${shell}rc"
 # remove existing conda initialization from local rc file
 sed -i '/# >>> conda initialize >>>/,/# <<< conda initialize <<</d' ${local_rc}
