@@ -14,6 +14,12 @@ fi
 versioned_rc="${DOTFILES}/${shell}/.${shell}rc"
 source ${versioned_rc}
 
+# configure symbolic links
+for app in alacritty bat conda fzf lsd nano python starship tmux vivid wget zsh; do
+    symlink=${XDG_CONFIG_HOME}/${app}
+    if [[ ! -L ${symlink} ]]; then ln -s ${DOTFILES}/${app} ${symlink}; fi
+done
+
 if [[ "${OSTYPE}" == *"darwin"* ]]; then  # macOS
 
     # configure ZDOTDIR in /etc/zshenv
@@ -47,14 +53,6 @@ fi
 
 # clone submodules
 # git submodule update --init --recursive
-
-# configure symbolic links
-for app in alacritty bat conda fzf lsd nano python ripgrep tmux vivid wget zsh; do
-    symlink=${XDG_CONFIG_HOME}/${app}
-    if [[ ! -L ${symlink} ]]; then ln -s ${symlink} ${DOTFILES}/${app}; fi
-done
-symlink=${XDG_CONFIG_HOME}/starship.toml
-if [[ ! -L ${symlink} ]]; then ln -s ${symlink} ${DOTFILES}/starship/starship.toml; fi
 
 # conda
 echo "Cleaning up conda installation"
