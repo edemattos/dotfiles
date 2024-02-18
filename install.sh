@@ -20,7 +20,7 @@ if [[ "${OSTYPE}" == *"darwin"* ]]; then  # macOS
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     fi
     echo "Installing Homebrew packages"
-    brew bundle install --quiet --file=${DOTFILES}/homebrew/Brewfile
+    brew bundle install --verbose --file=${DOTFILES}/homebrew/Brewfile
 
 elif [[ "${OSTYPE}" == *"linux"* ]]; then  # linux
 
