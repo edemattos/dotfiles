@@ -27,27 +27,11 @@ if [[ "${OSTYPE}" == *"darwin"* ]]; then  # macOS
         echo 'export ZDOTDIR="$HOME"/.config/zsh' | sudo tee -a /etc/zshenv
     fi
 
-    # homebrew
-    if [[ ! -z $(which brew) ]]; then
-        echo "Already installed: Homebrew"
-    else
-        echo "Installing Homebrew"
-        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-    fi
-    echo "Installing Homebrew packages"
-    brew bundle install --verbose --file=${DOTFILES}/homebrew/Brewfile
+    ${DOTFILES}/homebrew/install.sh
 
 elif [[ "${OSTYPE}" == *"linux"* ]]; then  # linux
 
-    # conda
-    if [[ ! -z $(which mamba) ]]; then
-        echo "Already installed: conda"
-    else
-        echo "Installing conda"
-        wget https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-x86_64.sh &&
-        miniforge=$(find . -type f -name '*Miniforge3*')
-        bash ${miniforge} -b -p ${XDG_LOCAL_HOME}/miniforge3 && rm ${miniforge}
-    fi
+    ${DOTFILES}/bash/install.sh
 
 fi
 
