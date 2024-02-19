@@ -8,10 +8,6 @@ echo "Installing fd"
 url=$(curl -s "https://api.github.com/repos/sharkdp/fd/releases/latest" \
         | grep "https://.*$(uname -m).*$(uname | tr '[:upper:]' '[:lower:]')-gnu.tar.gz" \
         | cut -d '"' -f 4)
-if [[ -z ${url} ]]; then
-    echo "Not found: fd"
-    exit 0
-fi
 
 tarball=$(basename ${url})
 fd=$(echo ${tarball} | sed 's/\.tar\.gz//g')
