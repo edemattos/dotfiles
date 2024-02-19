@@ -2,7 +2,7 @@
 
 set -eou pipefail
 
-if [[ -d ${XDG_LOCAL_HOME}/bin/lsd ]]; then
+if [[ ! -z $(which lsd) ]]; then
     echo "Already exists: lsd"
     exit 0
 fi

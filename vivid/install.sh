@@ -2,7 +2,7 @@
 
 set -eou pipefail
 
-if [[ -d ${XDG_LOCAL_HOME}/bin/vivid ]]; then
+if [[ ! -z $(which vivid) ]]; then
     echo "Already exists: vivid"
     exit 0
 fi

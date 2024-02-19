@@ -2,7 +2,7 @@
 
 set -eou pipefail
 
-if [[ -d ${XDG_LOCAL_HOME}/bin/fzf ]]; then
+if [[ ! -z $(which fzf) ]]; then
     echo "Already exists: fzf"
     exit 0
 fi

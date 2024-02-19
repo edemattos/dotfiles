@@ -2,7 +2,7 @@
 
 set -eou pipefail
 
-if [[ -d ${XDG_LOCAL_HOME}/bin/fd ]]; then
+if [[ ! -z $(which fd) ]]; then
     echo "Already exists: fd"
     exit 0
 fi

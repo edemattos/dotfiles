@@ -2,7 +2,7 @@
 
 set -eou pipefail
 
-if [[ -d ${XDG_LOCAL_HOME}/bin/starship ]]; then
+if [[ ! -z $(which starship) ]]; then
     echo "Already exists: starship"
     exit 0
 fi

@@ -2,7 +2,7 @@
 
 set -eou pipefail
 
-if [[ -d ${XDG_LOCAL_HOME}/bin/bat ]]; then
+if [[ ! -z $(which bat) ]]; then
     echo "Already exists: bat"
     exit 0
 fi
