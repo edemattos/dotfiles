@@ -2,6 +2,11 @@
 
 set -eou pipefail
 
+if [[ -d ${XDG_LOCAL_HOME}/bin/bat ]]; then
+    echo "Already exists: bat"
+    exit 0
+fi
+
 echo "Installing bat"
 
 # use github api to get latest version

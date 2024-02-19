@@ -2,6 +2,11 @@
 
 set -eou pipefail
 
+if [[ -d ${XDG_LOCAL_HOME}/bin/lsd ]]; then
+    echo "Already exists: lsd"
+    exit 0
+fi
+
 echo "Installing lsd"
 
 # use github api to get latest version

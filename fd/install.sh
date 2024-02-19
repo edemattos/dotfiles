@@ -2,6 +2,11 @@
 
 set -eou pipefail
 
+if [[ -d ${XDG_LOCAL_HOME}/bin/fd ]]; then
+    echo "Already exists: fd"
+    exit 0
+fi
+
 echo "Installing fd"
 
 # use github api to get latest version

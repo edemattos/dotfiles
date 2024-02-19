@@ -2,6 +2,11 @@
 
 set -eou pipefail
 
+if [[ -d ${XDG_LOCAL_HOME}/bin/vivid ]]; then
+    echo "Already exists: vivid"
+    exit 0
+fi
+
 echo "Installing vivid"
 
 # use github api to get latest version
