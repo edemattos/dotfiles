@@ -12,7 +12,8 @@ if [[ "${SHELL}" == "/bin/zsh" ]]; then
     versioned_rc=$(get_versioned_rc "zsh")
 elif [[ "${SHELL}" == "/bin/bash" ]]; then
     versioned_rc=$(get_versioned_rc "bash")
-    ln -s ${versioned_rc} ${HOME}/.bashrc
+    bashrc="${HOME}/.bashrc"
+    if [[ ! -f ${bashrc} ]]; then ln -s ${versioned_rc} ${bashrc}; fi
 fi
 
 # configure symbolic links
