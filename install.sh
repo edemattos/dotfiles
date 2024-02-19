@@ -4,15 +4,16 @@ set -eou pipefail
 
 DOTFILES=$(cd -- "$(dirname -- ${BASH_SOURCE[0]})" &> /dev/null && pwd)
 WORKDIR=$(pwd) && cd ${DOTFILES}
+source ${DOTFILES}/bash/xdg.sh
 
 # load shell configuration
+function get_versioned_rc { echo "${DOTFILES}/${1}/.${1}rc"; }
 if [[ "${SHELL}" == "/bin/zsh" ]]; then
-    shell="zsh"
+    versioned_rc=$(get_versioned_rc "zsh")
 elif [[ "${SHELL}" == "/bin/bash" ]]; then
-    shell="bash"
+    versioned_rc=$(get_versioned_rc "bash")
+    ln -s ${versioned_rc} ${HOME}/.bashrc
 fi
-versioned_rc="${DOTFILES}/${shell}/.${shell}rc"
-source ${versioned_rc}
 
 # configure symbolic links
 for app in alacritty bat conda fzf lsd nano python starship tmux vivid wget zsh; do
@@ -41,13 +42,13 @@ fi
 # conda
 echo "Cleaning up conda installation"
 mamba init "$(basename "${SHELL}")" > /dev/null
-local_rc="${XDG_LOCAL_HOME}/.${shell}rc"
+local_rc="${XDG_LOCAL_HOME}/$(basename .${versioned_rc})"
 # remove existing conda initialization from local rc file
 sed -i '/# >>> conda initialize >>>/,/# <<< conda initialize <<</d' ${local_rc}
 # copy new conda initialization to local rc file
 sed -n '/# >>> conda initialize >>>/,/# <<< conda initialize <<</p' ${versioned_rc} >> ${local_rc}
 # remove conda initialization from versioned rc file
-git checkout ${versioned_rc} > /dev/null
+git checkout ${versioned_rc} 2> /dev/null
 
 # silence login messages
 touch ~/.hushlogin
