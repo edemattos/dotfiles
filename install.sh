@@ -5,6 +5,7 @@ set -eou pipefail
 DOTFILES=$(cd -- "$(dirname -- ${BASH_SOURCE[0]})" &> /dev/null && pwd)
 WORKDIR=$(pwd) && cd ${DOTFILES}
 source ${DOTFILES}/bash/xdg.sh
+export DOTFILES
 
 # load shell configuration
 function get_versioned_rc { echo "${DOTFILES}/${1}/.${1}rc"; }

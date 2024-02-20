@@ -8,4 +8,4 @@ if [[ ! -z $(which starship) ]]; then
 fi
 
 echo "Installing starship"
-curl -sS https://starship.rs/install.sh | sh -s -- -b ${XDG_LOCAL_HOME}/bin
+curl -sS https://starship.rs/install.sh | sh -s -- -y -b ${XDG_LOCAL_HOME}/bin
