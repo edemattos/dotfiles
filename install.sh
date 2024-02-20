@@ -41,8 +41,7 @@ fi
 # clone submodules
 # git submodule update --init --recursive
 
-# conda
-echo "Cleaning up conda installation"
+# configure and clean up conda installation
 mamba init "$(basename "${SHELL}")" > /dev/null
 local_rc="${XDG_LOCAL_HOME}/$(basename .${versioned_rc})"
 # remove existing conda initialization from local rc file
