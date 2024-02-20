@@ -39,7 +39,7 @@ elif [[ "${OSTYPE}" == *"linux"* ]]; then  # linux
 fi
 
 # clone submodules
-# git submodule update --init --recursive
+git submodule update --init --recursive
 
 # configure and clean up conda installation
 mamba init "$(basename "${SHELL}")" > /dev/null
