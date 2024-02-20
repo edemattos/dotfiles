@@ -14,7 +14,8 @@ if [[ "${SHELL}" == "/bin/zsh" ]]; then
 elif [[ "${SHELL}" == "/bin/bash" ]]; then
     versioned_rc=$(get_versioned_rc "bash")
     bashrc="${HOME}/.bashrc"
-    if [[ ! -f ${bashrc} ]]; then ln -s ${versioned_rc} ${bashrc}; fi
+    if [[ -f ${bashrc} ]]; then mv ${bashrc} ${bashrc}-OLD; fi
+    ln -s ${versioned_rc} ${bashrc}
 fi
 
 # configure symbolic links
@@ -42,6 +43,7 @@ fi
 git submodule update --init --recursive
 
 # configure and clean up conda installation
+source ${versioned_rc}
 mamba init "$(basename "${SHELL}")" > /dev/null
 local_rc="${XDG_LOCAL_HOME}/$(basename .${versioned_rc})"
 # remove existing conda initialization from local rc file
