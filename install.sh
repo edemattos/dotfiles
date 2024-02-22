@@ -36,7 +36,6 @@ if [[ "${OSTYPE}" == *"darwin"* ]]; then  # macOS
 elif [[ "${OSTYPE}" == *"linux"* ]]; then  # linux
 
     ${DOTFILES}/bash/install.sh
-    ${XDG_LOCAL_HOME}/miniforge3/bin/mamba init "$(basename "${SHELL}")" > /dev/null
 
 fi
 
