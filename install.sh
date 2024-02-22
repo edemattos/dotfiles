@@ -19,7 +19,7 @@ elif [[ "${SHELL}" == "/bin/bash" ]]; then
 fi
 
 # configure symbolic links
-for app in alacritty bat conda fzf lsd nano python starship tmux vivid wget zsh; do
+for app in alacritty bat fzf lsd nano python starship tmux vivid wget zsh; do
     symlink=${XDG_CONFIG_HOME}/${app}
     if [[ ! -L ${symlink} ]]; then ln -s ${DOTFILES}/${app} ${symlink}; fi
 done
