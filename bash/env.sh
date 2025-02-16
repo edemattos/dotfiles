@@ -22,6 +22,9 @@ export TERMINFO=${XDG_DATA_HOME}/terminfo
 export TERMINFO_DIRS=${XDG_DATA_HOME}/terminfo:/usr/share/terminfo
 # python
 export PYTHONSTARTUP=${XDG_CONFIG_HOME}/python/pythonrc
+# rust
+export RUSTUP_HOME=${XDG_CONFIG_HOME}/rust/rustup
+export CARGO_HOME=${XDG_CONFIG_HOME}/rust/cargo
 # starship
 export STARSHIP_CONFIG=${XDG_CONFIG_HOME}/starship/starship.toml
 export STARSHIP_LOG=error
