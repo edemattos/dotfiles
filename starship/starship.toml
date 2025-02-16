@@ -42,13 +42,13 @@ home_symbol = "∼"
 
 [git_branch]
 symbol = ""
-style = "dimmed red"
+style = "#a66c5b"
 format = "[$symbol $branch]($style) "
 
 [git_commit]
 commit_hash_length = 7
 format = '[ $hash$tag]($style) '
-style = 'dimmed red'
+style = '#a66c5b'
 tag_disabled = false
 tag_symbol = "  "
 
@@ -65,7 +65,7 @@ staged = '[](dimmed green) '
 renamed = '[](dimmed green) '
 deleted = '[](dimmed red) '
 format = '[$all_status$ahead_behind]($style)'
-style = "dimmed red"
+style = "a66c5b"
 
 [username]
 format = '[$user]($style) '
