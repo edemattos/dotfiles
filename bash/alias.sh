@@ -108,6 +108,7 @@ alias gcom="git checkout $(git_main_branch)"
 alias gd="git diff"
 alias gl="git log --graph --pretty=format:'%C(yellow)%h%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset%Cred%d%Creset' --abbrev-commit"
 alias gst="git status"
+alias gs="gst"  # avoid GhostScript prompt
 
 # tmux
 launch_tmux() {
