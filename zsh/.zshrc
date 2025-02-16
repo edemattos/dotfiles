@@ -1,4 +1,4 @@
-export DOTFILES=${HOME}/dotfiles
+export DOTFILES=${HOME}/git/dotfiles
 
 # prompt
 eval "$(starship init zsh)"

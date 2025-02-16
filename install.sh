@@ -21,7 +21,8 @@ fi
 # configure symbolic links
 for app in alacritty bat fzf lsd nano python starship tmux vivid wget zsh; do
     symlink=${XDG_CONFIG_HOME}/${app}
-    if [[ ! -L ${symlink} ]]; then ln -s ${DOTFILES}/${app} ${symlink}; fi
+    if [[ -f ${symlink} || -L ${symlink} ]]; then rm -r ${symlink}; fi
+    ln -s ${DOTFILES}/${app} ${symlink}
 done
 
 if [[ "${OSTYPE}" == *"darwin"* ]]; then  # macOS
